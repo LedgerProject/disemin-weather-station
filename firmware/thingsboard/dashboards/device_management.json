@@ -1,0 +1,490 @@
+{
+  "title": "Device Management",
+  "configuration": {
+    "widgets": {
+      "61d80687-0585-06ac-8591-7b4f6de7a612": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "attributes_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "ch_int",
+                  "type": "attribute",
+                  "label": "Calling home interval",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.6825430510216697
+                },
+                {
+                  "name": "was_int",
+                  "type": "attribute",
+                  "label": "Water sensors measure interval (mins)",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.34637238986375585
+                },
+                {
+                  "name": "wes_int",
+                  "type": "attribute",
+                  "label": "Weather station read interval (mins)",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.6193627815001761
+                },
+                {
+                  "name": "sm_int",
+                  "type": "attribute",
+                  "label": "Soil moisture interval (mins)",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.9895954304515269
+                },
+                {
+                  "name": "do_ota",
+                  "type": "attribute",
+                  "label": "OTA Update",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.7823087513337792
+                },
+                {
+                  "name": "fw_md5",
+                  "type": "attribute",
+                  "label": "Firmware MD5",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.38930568017470746
+                },
+                {
+                  "name": "fw_url",
+                  "type": "attribute",
+                  "label": "Firmware URL",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.5913055225745583
+                },
+                {
+                  "name": "fw_v",
+                  "type": "attribute",
+                  "label": "Firmware version",
+                  "color": "#8bc34a",
+                  "settings": {},
+                  "_hash": 0.6025624790776725
+                },
+                {
+                  "name": "data_id",
+                  "type": "attribute",
+                  "label": "Remote control data ID",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.09284528345487542,
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": "f06de6da-bbdf-e1a2-74cb-a9ab3d56ed65"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {},
+          "title": "Target configuration (outgoing)",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {
+            "headerButton": []
+          },
+          "showTitleIcon": true,
+          "titleIcon": "settings",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "displayTimewindow": true
+        },
+        "id": "61d80687-0585-06ac-8591-7b4f6de7a612"
+      },
+      "8c546ddd-c392-4457-fa7f-959f3b400bfa": {
+        "isSystemType": false,
+        "bundleAlias": "ota_for_esp32_widget22",
+        "typeAlias": "esp32",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 16,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [],
+              "entityAliasId": "f06de6da-bbdf-e1a2-74cb-a9ab3d56ed65"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {},
+          "title": "Create new configuration",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": true,
+          "titleIcon": "settings",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "displayTimewindow": true
+        },
+        "id": "8c546ddd-c392-4457-fa7f-959f3b400bfa"
+      },
+      "93a2db6d-11ca-088d-4c6b-ee09f73d642c": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "attributes_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 8,
+        "sizeY": 9,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "cur_fw_v",
+                  "type": "attribute",
+                  "label": "FW Version",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.4602023043909136
+                },
+                {
+                  "name": "cur_ch_int",
+                  "type": "attribute",
+                  "label": "Calling home interval (mins)",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.017297148397854123
+                },
+                {
+                  "name": "cur_time",
+                  "type": "attribute",
+                  "label": "System time",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.39830509643885437,
+                  "postFuncBody": "return new Date(value * 1000).toUTCString();"
+                },
+                {
+                  "name": "cur_wes_int",
+                  "type": "attribute",
+                  "label": "Weather station interval (mins)",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.33451982077801623
+                },
+                {
+                  "name": "cur_was_int",
+                  "type": "attribute",
+                  "label": "Water sensors interval (mins)",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.4236994988295393
+                },
+                {
+                  "name": "cur_sm_int",
+                  "type": "attribute",
+                  "label": "Soil moisture interval (mins)",
+                  "color": "#ffeb3b",
+                  "settings": {},
+                  "_hash": 0.46073581154527843
+                },
+                {
+                  "name": "d_bat_p",
+                  "type": "timeseries",
+                  "label": "Battery %",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.6982901807394049
+                },
+                {
+                  "name": "d_bat_mv",
+                  "type": "timeseries",
+                  "label": "Battery mV",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.049113270881779636
+                },
+                {
+                  "name": "uptime",
+                  "type": "attribute",
+                  "label": "Uptime (mins)",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.1395184583105773
+                },
+                {
+                  "name": "troll_model",
+                  "type": "attribute",
+                  "label": "Aquatroll Model",
+                  "color": "#03a9f4",
+                  "settings": {},
+                  "_hash": 0.5099655928085283,
+                  "decimals": 0
+                },
+                {
+                  "name": "cur_fo_en",
+                  "type": "attribute",
+                  "label": "FO Enabled",
+                  "color": "#ff9800",
+                  "settings": {},
+                  "_hash": 0.745801890822599,
+                  "postFuncBody": "// return value ? \"Yes\" : \"No\";\nreturn value;"
+                },
+                {
+                  "name": "cur_fo_id",
+                  "type": "attribute",
+                  "label": "FO Id",
+                  "color": "#673ab7",
+                  "settings": {},
+                  "_hash": 0.6195599451364913
+                },
+                {
+                  "name": "flags",
+                  "type": "attribute",
+                  "label": "Flags",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.24883158516289328,
+                  "postFuncBody": "// Order important, must be the same as the bit Order\nconst flag_strings = [\n\t\"Debug mode\",\n\t\"Log raw SDI12 comms\",\n\t\"WiFi debug console\",\n\t\"WiFi data submission\",\n\t\n\t\"Fuel gauge enabled\",\n\t\"NBIoT mode enabled\",\n\t\"Minutes as seconds\",\n\t\"Force normal battey mode\",\n\t\n\t\"Water quality sensor enabled\",\n\t\"Water level sensor enabled\",\n\t\"Weather station enabled\",\n\t\"FineOffset sniffer enabled\",\n\t\"Soil moisture sensor enabled\",\n\t\"Measure dummy water quality\",\n\t\"Measure dummy water level\",\n\t\n\t\"Measure dummy weather\",\n\t\"External RTC enabled\"\n];\n\nlet output_strings = [];\n\nfor(var i=0; i<flag_strings.length; i++)\n{\n\tlet str = `- ${flag_strings[i]}: `;\n\tstr += value & (1 << i) ? \"True\" : \"False\";\n\n\toutput_strings.push(str);\n}\n\nreturn output_strings.join(\"<br>\");"
+                }
+              ],
+              "entityAliasId": "f06de6da-bbdf-e1a2-74cb-a9ab3d56ed65"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {},
+          "title": "Device configuration (incoming)",
+          "showTitleIcon": true,
+          "titleIcon": "extension",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "93a2db6d-11ca-088d-4c6b-ee09f73d642c"
+      },
+      "30510f3b-4063-5e8b-5930-5aa208687c92": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "timeseries_table",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 11,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "log",
+                  "type": "timeseries",
+                  "label": "Log",
+                  "color": "#4caf50",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.9138306389067863,
+                  "postFuncBody": "const CODES = {\n    BOOT: 1,\n    RESTART: 2,\n    CALLING_HOME: 3,\n    TIME_SYNC: 4,\n    SENSOR_DATA_SUBMITTED: 5,\n    SENSOR_DATA_SUBMISSION_ERRORS: 6,\n    LOG_SUBMITTED: 7,\n    DEVICE_CONFIG_DATA_CRC_ERRORS: 11,\n    SLEEP: 12,\n    WAKEUP: 13,\n    NTP_TIME_SYNC_FAILED: 14,\n    BATTERY: 15,\n    INT_ENV_SENSOR1: 16,\n    INT_ENV_SENSOR2: 17,\n    BATTERY_GAUGE: 18,\n    RC_PARSE_FAILED: 19,\n    RC_INVALID_FORMAT: 20,\n    RTC_TEMPERATURE: 21,\n    RC_REQUEST_FAILED: 22,\n    RC_APPLYING_NEW_DATA: 23,\n    RC_WATER_SENSORS_READ_INT_SET_SUCCESS: 24,\n    RC_WATER_SENSORS_READ_INT_SET_FAILED: 25,\n    RC_CALL_HOME_INT_SET_SUCCESS: 26,\n    RC_CALL_HOME_INT_SET_FAILED: 27,\n    OTA_REQUESTED: 28,\n    OTA_NO_FW_VERSION_SPECIFIED: 29,\n    OTA_FW_SAME_VERSION: 30,\n    OTA_FW_URL_NOT_SET: 31,\n    OTA_MD5_NOT_SET: 32,\n    OTA_URL_INVALID: 33,\n    OTA_FILE_GET_REQ_FAILED: 34,\n    OTA_FILE_GET_REQ_BAD_RESPONSE: 35,\n    OTA_FILE_GET_REQ_RESP_EMPTY: 36,\n    OTA_UPDATE_BEGIN_FAILED: 37,\n    OTA_DOWNLOADING_AND_WRITING_FW: 38,\n    OTA_WRITING_FW_COMPLETE: 39,\n    OTA_UPDATE_NOT_FINISHED: 40,\n    OTA_COULD_NOT_FINALIZE_UPDATE: 41,\n    OTA_FINISHED: 42,\n    OTA_SELF_TEST_PASSED: 43,\n    OTA_SELF_TEST_FAILED: 44,\n    OTA_ROLLING_BACK: 45,\n    OTA_ROLLBACK_NOT_POSSIBLE: 46,\n    FS_SPACE: 47,\n    RTC_SYNC: 48,\n    TB_CLIENT_ATTR_PUBLISH_FAILED: 49,\n    SLEEP_CHARGE: 50,\n    SLEEP_CHARGE_FINISHED: 51,\n    WATER_QUALITY_MEASURE_FAILED: 52,\n    WATER_LEVEL_MEASURE_FAILED: 53,\n    SPIFFS_FORMATTED: 54,\n    SPIFFS_FORMAT_FAILED: 55,\n    WATER_QUALITY_INVALID_RESPONSE: 56,\n    WATER_QUALITY_MEASUREMENT_DATA_REQ_FAILED: 57,\n    WATER_QUALITY_ZERO_VALS: 58,\n    WATER_QUALITY_CRC_FAILED: 59,\n    WEATHER_STATION_INVALID_RESPONSE: 61,\n    WEATHER_STATION_MEASUREMENT_DATA_REQ_FAILED: 62,\n    RC_WEATHER_STATION_READ_INT_SET_SUCCESS: 63,\n    RC_WEATHER_STATION_READ_INT_SET_FAILED: 64,\n    WAKEUP_SELF_TEST_FAILED: 65,\n    WEATHER_STATION_MEASUREMENT_LOG: 66, \n    WATER_SENSORS_MEASUREMENT_LOG: 67,\n    SCHEDULE_INVALID_USING_DEFAULT: 68,\n    BATTERY_MODE_UNKNOWN: 69,\n    WEATHER_STATION_MEASUREMENT_FAILED: 70,\n    CALLING_HOME_END: 71,\n    MAC_ADDRESS: 72,\n    SOIL_MOISTURE_SENSOR_MEASUREMENT_LOG: 73,\n    SOIL_MOISTURE_MEASUREMENT_FAILED: 74,\n    SOLAR_PANEL_VOLTAGE: 75,\n    USING_DEFAULT_DEVICE_CONFIG: 76,\n    SLEEP_CHARGE_CHECK: 77,\n    SOIL_MOISTURE_INVALID_RESPONSE: 78,\n    SOIL_MOISTURE_MEASUREMENT_DATA_REQ_FAILED: 79,\n    SOIL_MOISTURE_ZERO_VALS: 80,\n    RC_SOIL_MOISTURE_READ_INT_SET_SUCCESS: 81,\n    RC_SOIL_MOISTURE_READ_INT_SET_FAILED: 82,\n    FO_SNIFFER_SCANNING: 83,\n    FO_SNIFFER_SCAN_RESULT: 84,\n    FO_SNIFFER_SCAN_FINISHED: 85,\n    FO_ENABLED_STATUS: 86,\n    FO_DISABLED_RX_FAILED: 87,\n    \n    GSM_NETWORK_DISCOVERY_FAILED: 100,\n    GSM_RSSI: 101,\n    GSM_NO_SIM_CARD: 102,\n    GSM_GPRS_CONNECTION_FAILED: 103,\n    GSM_INIT_FAILED: 104,\n    GSM_ON: 105,\n    GSM_OFF: 106,\n    \n    CALL_HOME_WAKEUP_MISSED: 200,\n    WAKEUP_CORRECTION: 201,\n    WAKEUP_EVENTS_MISSED: 202,\n    WATER_LEVEL_RAW_READING: 203\n    \n    \n}\n\n// log_code: message\nconst MESSAGES = {\n\t1: \"Boot (Version: %s)\",\n\t2: \"Device is going to be restarted\",\n\t3: \"Calling home\",\n\t4: \"Time sync\",\n\t5: \"Sensor data submitted (Total entries: %s - CRC failures: %s)\",\n\t6: \"Sensor data submission errors (Total requests: %s - Failed requests: %s)\",\n\t7: \"Log submitted (Total entries: %s - CRC failures: %s)\",\n\t11: \"Device config load failed due to CRC errors\",\n\t12: \"Going to sleep (Time awake: %ss - Sleeping for: %ss)\" ,\n\t13: \"Waking up (Reason: %s)\",\n\t14: \"NTP time sync failed\",\n\t15: \"Battery ADC (Voltage: %s mV - Pct: %s%)\",\n\t16: \"Internal env. sensor (Temperature: %sC - Rel. Humidity: %s%)\",\n\t17: \"Internal env. sensor (Pressure: %shPa - Alt: %sm)\",\n\t18: \"Battery gauge (Voltage: %s mV - Pct: %s%)\",\n\t19: \"Could not deserialize remote control data\",\n\t20: \"Remote control data format invalid\",\n\t21: \"RTC temperature (%sC)\",\n\t22: \"Remote control request failed (HTTP resp. code: %s)\",\n\t23: \"Applying remote control data (New id: %s - Old id: %s)\",\n\t24: \"Water sensors read interval set: %s\",\n\t25: \"Setting water sensors read interval failed (value: %s)\",\n\t26: \"Call home interval set: %s\",\n\t27: \"Setting calling home interval failed (value: %s)\",\n\t28: \"OTA requested\",\n\t29: \"OTA: No fw version specified (current: %s)\",\n\t30: \"OTA: Provided fw is the same version as current (current: %s)\",\n\t31: \"OTA: FW url not provided or empty.\",\n\t32: \"OTA: MD5 not set\",\n\t33: \"OTA: Invalid url\",\n\t34: \"OTA: File GET request failed (HTTP resp. code: %s)\",\n\t35: \"OTA: File GET request returned error (HTTP resp. code: %s)\",\n\t36: \"OTA: File GET request returned empty response (HTTP resp. code: %s)\",\n\t37: \"OTA: Update begin() failed (Error code: %s)\",\n\t38: \"OTA: Downloading and writing fw to partition (Size: %s)\",\n\t39: \"OTA: Writing fw complete (Total: %s - Written: %s)\",\n\t40: \"OTA: Update not finished successfully (Error code: %s)\",\n\t41: \"OTA: Could not finalize update (Error code: %s)\",\n\t42: \"OTA: Process complete\",\n\t43: \"OTA: Self test passed\",\n\t44: \"OTA: Self test failed\",\n\t45: \"OTA: Rolling back to old fw\",\n\t46: \"OTA: Rolling back to old fw is not possible\",\n\t47: \"File system space (Used: %s B - Free: %s B)\",\n\t48: \"RTC Sync (Time before sync: %s)\",\n\t49: \"Could not publish client attributes (HTTP resp: code: %s)\",\n\t50: \"Entering sleep charge mode\",\n\t51: \"Sleep charge finished, battery reached threshold\",\n\t52: \"Water quality measuring failed\",\n\t53: \"Water level measurement failed\",\n\t54: \"SPIFFS formatted successfully (Bytes before format: %s)\",\n\t55: \"SPIFFS format failed\",\n\t56: \"Water quality: invalid response (Length: %s, Data: %s)\",\n\t57: \"Water quality: measurement data request failed (Command: aD%s)\",\n\t58: \"Water quality: returned all zero values\",\n\t59: \"Water quality: CRC failed\",\n\t60: \"Water quality: measurement command response (Secs to wait: %s - Measurement vals: %s)\",\n\t61: \"Weather station: invalid response\",\n\t62: \"Weather station: measurement data request failed (Command: aD%s)\",\n\t63: \"Weather station read interval set: %s\",\n\t64: \"Setting weather station read interval failed (value: %s)\",\n\t65: \"Wake up self-test failed\",\n\t66: \"Weather station logging measurement\",\n\t67: \"Water sensors logging measurement\",\n\t68: \"Invalid schedule provided, using default\",\n\t69: \"Battery mode unknown, assuming normal\",\n\t70: \"Weather station measurement failed\",\n\t71: \"Calling home end\",\n\t72: \"MAC address\",\n\t73: \"Soil moilsture logging measurement\",\n\t74: \"Soil moisture measurement failed\",\n\t75: \"Solar panel voltage: %s mV\",\n\t76: \"Invalid device config, using default\",\n\t77: \"Sleep charge: Checking battery status\",\n\t78: \"Soil moisture: invalid response\",\n\t79: \"Soil moisture: measurement data request failed (Command: aD%s)\",\n\t80: \"Soil moisture: returned all zero values\",\n\t81: \"Soil moisture read interval set: %s\",\n\t82: \"Setting soil moisture read interval failed (value: %s)\",\n\t83: \"FO Sniffer: Scanning\",\n\t84: \"FO Sniffer: Found weather station ID 0x%s\",\n\t85: \"FO Sniffer: Scanning finished\",\n\t86: \"FO Sniffer enabled status - Previous: %s - New: %s\",\n\t87: \"FO: RX failure threshold reached, disabling FO\",\n\t\n\t100: \"GSM: Network discovery failed\",\n\t101: \"GSM: RSSI (%s)\",\n\t102: \"GSM: Failed to detect SIM card.\",\n\t103: \"GSM: GPRS connection failed\",\n\t104: \"GSM: Modem init failed\",\n\t105: \"GSM: On\",\n\t106: \"GSM: Off\",\n\t\n\t200: \"Call home wake up missed, executing immediately\",\n\t201: \"Correcting wake up time, sleeping for %s seconds\",\n\t202: \"Missed Wake up events detected, handling them immediately\",\n\t203: \"Raw water level reading: %s\"\n}\n\nlet [log_code, meta1, meta2] = value.split(\",\");\n\nlet msg = \"\";\n\nif(log_code in MESSAGES)\n{\n\tmsg = MESSAGES[log_code];\n\t\n\t//\n\t// Convert meta data to a more readable format for certain codes\n\t//\n\tswitch(parseInt(log_code))\n\t{\n\tcase CODES.WAKEUP:\n\t    let wakeup_reasons = [];\n\t    if(meta1 & 1)\n\t        wakeup_reasons.push(\"Call Home\");\n\t    if(meta1 & 2)\n\t        wakeup_reasons.push(\"Water sensors\");\n\t    if(meta1 & 4)\n\t        wakeup_reasons.push(\"Weather station\");\n\t    \n\t    meta1 = wakeup_reasons.join(\" - \");\n\t   \n\t    break;\n\tcase CODES.RTC_SYNC:\n\t    \n\t    meta1 = (new Date(meta1 * 1000)).toLocaleString();\n\t    \n\t    break;\n\t}\n\n\t// Replace both meta vals if they exist\n\tif(typeof meta1 !== \"undefined\" && meta1.length)\n\t\tmsg = msg.replace(\"%s\", meta1);\n\tif(typeof meta2 !== \"undefined\" && meta2.length)\n\t\tmsg = msg.replace(\"%s\", meta2);\n}\nelse\n{\n\tmsg = \"UNKNOWN LOG TYPE\";\n}\n\nreturn msg;"
+                },
+                {
+                  "name": "log",
+                  "type": "timeseries",
+                  "label": "Raw",
+                  "color": "#2196f3",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.5999628909237786
+                }
+              ],
+              "entityAliasId": "f06de6da-bbdf-e1a2-74cb-a9ab3d56ed65"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 12850
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showTimestamp": true,
+            "displayPagination": true,
+            "defaultPageSize": 200
+          },
+          "title": "Logs",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": true,
+          "titleIcon": "list",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "displayTimewindow": true
+        },
+        "id": "30510f3b-4063-5e8b-5930-5aa208687c92"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "test",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "61d80687-0585-06ac-8591-7b4f6de7a612": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "row": 0,
+                "col": 4
+              },
+              "8c546ddd-c392-4457-fa7f-959f3b400bfa": {
+                "sizeX": 4,
+                "sizeY": 16,
+                "row": 0,
+                "col": 0
+              },
+              "93a2db6d-11ca-088d-4c6b-ee09f73d642c": {
+                "sizeX": 8,
+                "sizeY": 9,
+                "row": 5,
+                "col": 4
+              },
+              "30510f3b-4063-5e8b-5930-5aa208687c92": {
+                "sizeX": 12,
+                "sizeY": 11,
+                "row": 0,
+                "col": 12
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "f06de6da-bbdf-e1a2-74cb-a9ab3d56ed65": {
+        "id": "f06de6da-bbdf-e1a2-74cb-a9ab3d56ed65",
+        "alias": "ALL Nodes",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": false,
+          "deviceType": "EXM_NODE",
+          "deviceNameFilter": ""
+        }
+      }
+    },
+    "timewindow": {
+      "realtime": {
+        "interval": 1000,
+        "timewindowMs": 86400000
+      },
+      "aggregation": {
+        "type": "NONE",
+        "limit": 9825
+      },
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "Device Management"
+}

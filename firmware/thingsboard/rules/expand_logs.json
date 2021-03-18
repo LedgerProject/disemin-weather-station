@@ -1,0 +1,68 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Expand logs",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 1,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 535,
+          "layoutY": 153
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "create ts",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "// Codes are in log_codes.h\n\nvar tokens = msg.log.split(\",\");\nvar log_code = tokens[0];\nvar meta1 = tokens[1];\nvar meta2 = tokens[2];\n\nswitch (log_code) {\n    case '1':\n        msg = {\n            \"d_boot\": meta2\n        };\n        break;\n    case '5':\n        msg = {\n            \"d_sd_total_rec\": meta1,\n            \"d_sd_crc\": meta2\n        };\n        break;\n    case '6':\n        msg = {\n            \"d_sd_total_req\": meta1,\n            \"d_sd_failed_req\": meta2\n        };\n        break;\n    case '12':\n        msg = {\n            \"d_tm_awake_s\": meta1\n        };\n        break;\n    case '13':\n        msg = {\n            \"d_wakeup\": meta1\n        };\n        break;\n    case '14':\n        msg = {\n            \"d_ntp_fail\": 1\n        };\n        break;\n    case '15':\n        msg = {\n            \"d_bat_mv\": meta1,\n            \"d_bat_p\": meta2\n        };\n        break;\n    case '16':\n        msg = {\n            \"d_temp\": meta1,\n            \"d_hum\": meta2\n        };\n        break;\n    case '17':\n        msg = {\n            \"d_pressure\": meta1\n        };\n        break;\n    case '18':\n        msg = {\n            \"d_bat_gsm_mv\": meta1,\n            \"d_bat_gsm_p\": meta2\n        };\n        break;\n    case '21':\n        msg = {\n            \"d_rtc_t\": meta1\n        };\n        break;\n    case '23':\n        msg = {\n            \"rc_applying_new_data\": 1,\n        };\n        break;\n    case '50':\n        msg = {\n            \"d_sleep_charge\": 1,\n        };\n        break;\n    case '51':\n        msg = {\n            \"d_sleep_charge_finished\": 1,\n        };\n        break;\n    case '75':\n        msg = {\n            \"d_solar_mv\": meta1\n        };\n        break;\n    case '100':\n        msg = {\n            \"d_gsm_conn_fail\": 1\n        };\n        break;\n    case '101':\n        msg = {\n            \"d_gsm_rssi\": meta1\n        };\n        break;\n    case '103':\n        msg = {\n            \"d_gprs_conn_fail\": 1\n        };\n        break;\n    default:\n        msg = {\n            \"UNKNOWN LOG TYPE\": msg.log\n        };\n}\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 285,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbCheckMessageNode",
+        "name": "log filter",
+        "debugMode": false,
+        "configuration": {
+          "messageNames": [
+            "log"
+          ],
+          "metadataNames": [],
+          "checkAllKeys": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 796,
+          "layoutY": 152
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save ts",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 0,
+        "type": "True"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
