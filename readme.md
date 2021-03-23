@@ -1,8 +1,8 @@
 # AgroXM Weather Station
 
-![Weather Station](./assets/render1.png)
+![Weather Station](./media/ws1.png)
 
-![Weather Station](./assets/pcb.png)
+![Weather Station](./media/pcb.png)
 
 ## Initialization
 The preparation of the weather station for deployment consists of the following steps:
