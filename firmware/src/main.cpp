@@ -34,6 +34,7 @@
 #include "lightning.h"
 #include "battery_gauge.h"
 #include "solar_monitor.h"
+#include "ipfs_client.h"
 
 // For testing
 #include "http_request.h"
@@ -257,6 +258,28 @@ void setup()
 
 	///////////////////////////////////////////////////////////////////
 	// Testing area
+
+	// WifiModem::connect();
+	// WiFiClient wifi_client;
+	// IPFSClient client(wifi_client);
+
+	// client.set_node_address(IPFS_NODE_ADDR, IPFS_NODE_PORT);
+	// IPFSClientFile f = {0};
+	// client.add_json("afile", &f);
+
+	// Serial.println(F("Hasshhh: "));
+	// Serial.println(f.hash);
+
+	// String tbjson = "";
+	// Utils::build_ipfs_file_json("thisis thehash", 123455, tbjson);
+
+	// Serial.println(F("Result: "));
+	// Serial.println(tbjson);
+
+	// Serial.println(F("Done!"));
+	// while(1);
+
+
 	// GSM::on();
 	// GSM::connect();
 	// if(GSM::update_ntp_time() == RET_OK)

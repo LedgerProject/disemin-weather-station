@@ -6,7 +6,7 @@
 #include "sdi12_sensor.h"
 
 /** FW Version */
-const int FW_VERSION = 149;
+const int FW_VERSION = 150;
 
 /******************************************************************************
  * Credentials
@@ -34,7 +34,7 @@ extern const int TB_PORT;
  * Enable data submission through Wifi instead of GSM
  * For debugging purposes
  */
-#define WIFI_DATA_SUBMISSION false
+#define WIFI_DATA_SUBMISSION true
 
 // Main switches
 
@@ -74,10 +74,10 @@ volatile const FLAGS_T FLAGS
     BATTERY_FORCE_NORMAL_MODE: false,
 
     /** Take measurements from water quality sensor */
-    WATER_QUALITY_SENSOR_ENABLED: true,
+    WATER_QUALITY_SENSOR_ENABLED: false,
     
     /** Take measurements from water level sensor */
-    WATER_LEVEL_SENSOR_ENABLED: true,
+    WATER_LEVEL_SENSOR_ENABLED: false,
 
     /** Take measurements from Atmos41 weather station */
     WEATHER_STATION_ENABLED: false,
@@ -97,10 +97,13 @@ volatile const FLAGS_T FLAGS
     LIGHTNING_SENSOR_ENABLED: false,
 
     /** Sync RTC automatically on preset intervals */
-    RTC_AUTO_SYNC: false,
+    RTC_AUTO_SYNC: true,
 
     /** Use external RTC when syncing time */
-    EXTERNAL_RTC_ENABLED: true
+    EXTERNAL_RTC_ENABLED: true,
+
+    /** Submit data to IPFS */
+    IPFS: true
 }; 
 
 /** Print serial comms between the MCU and the GSM module (used by tinyGSM) */
@@ -132,8 +135,8 @@ const WaterLevelChannel WATER_LEVEL_INPUT_CHANNEL = WATER_LEVEL_CHANNEL_MAXBOTIX
 // const WaterLevelChannel WATER_LEVEL_INPUT_CHANNEL = WATER_LEVEL_CHANNEL_MAXBOTIX_SERIAL;
 
 // const AquatrollModel AQUATROLL_MODEL = AQUATROLL_MODEL_400;
-// const AquatrollModel AQUATROLL_MODEL = AQUATROLL_MODEL_500;
-const AquatrollModel AQUATROLL_MODEL = AQUATROLL_MODEL_600;
+const AquatrollModel AQUATROLL_MODEL = AQUATROLL_MODEL_500;
+// const AquatrollModel AQUATROLL_MODEL = AQUATROLL_MODEL_600;
 
 /**
  * FineOffset weather station source: sniffer/uart

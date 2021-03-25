@@ -709,4 +709,24 @@ namespace Utils
 	{
 		return rad * (180 / M_PI);
 	}
+
+
+	/******************************************************************************
+	 * Build TB telemetry JSON for IPFS entry
+	 *****************************************************************************/
+	void build_ipfs_file_json(String hash, uint32_t timestamp, char *buff, int buff_size)
+	{
+		StaticJsonDocument<1024> _json_doc;
+		JsonArray _root_array;
+		_json_doc.clear();
+		_root_array = _json_doc.template to<JsonArray>();
+		JsonObject json_entry = _root_array.createNestedObject();
+
+		json_entry[WATER_SENSOR_DATA_KEY_TIMESTAMP] = (long long)timestamp * 1000;
+		JsonObject values = json_entry.createNestedObject("values");
+
+		values["ipfs_hash"] = hash;
+
+		serializeJson(_json_doc, buff, buff_size);
+	}
 }

@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include <inttypes.h>
 #include "struct.h"
+#include "ipfs_client.h"
 
 namespace Utils
 {
@@ -48,6 +49,8 @@ namespace Utils
 
     float deg_to_rad(float deg);
 	float rad_to_deg(float rad);
+
+    void build_ipfs_file_json(String hash, uint32_t timestamp, char *buff, int buff_size);
 }
 
 #endif

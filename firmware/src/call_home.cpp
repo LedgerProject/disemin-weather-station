@@ -33,6 +33,7 @@
 #include "battery_gauge.h"
 #include "solar_monitor.h"
 #include "rtc.h"
+#include "credentials.h"
 
 namespace CallHome
 {
@@ -43,6 +44,7 @@ namespace CallHome
 	RetResult submit_stored_telemetry(TStore *store, DataStoreSubmitStats *stats);
 	RetResult submit_tb_telemetry(const char *data, int data_size);
 	uint32_t build_flags_bitmask();
+	RetResult submit_ipfs();
 	RetResult end();
 
 	/******************************************************************************
@@ -314,6 +316,11 @@ namespace CallHome
     	};
 
 		//
+		// IPFS
+		//
+		submit_ipfs();
+
+		//
 		// Submit telemetry
 		//
 		bool submission_aborted = false;
@@ -583,6 +590,109 @@ namespace CallHome
 			Utils::serial_style(STYLE_RESET);
 			return RET_ERROR;
 		}
+
+		return RET_OK;
+	}
+
+	/******************************************************************************
+	* Submit 
+	******************************************************************************/
+	RetResult submit_ipfs()
+	{
+		if(!FLAGS.IPFS)
+		{
+			return RET_OK;
+		}
+
+		Utils::serial_style(STYLE_BLUE);
+		Utils::print_separator(F("Submitting IPFS."));
+		Utils::serial_style(STYLE_RESET);
+
+		//
+		// Add dummy data to store
+		//
+		// FoData::StoreEntry dummy_entry = {0};
+		// dummy_entry.hum = 434;
+		// dummy_entry.temp = 22;
+		// dummy_entry.timestamp = RTC::get_timestamp();;
+		// dummy_entry.light = 1000000;
+		// dummy_entry.solar_radiation = 1234;
+		// dummy_entry.wind_dir = 12;
+		// dummy_entry.wind_gust = 12;
+		// dummy_entry.wind_speed = 2;
+		// FoData::add(&dummy_entry);
+
+		// dummy_entry.hum = 33;
+		// dummy_entry.temp = 24;
+		// dummy_entry.timestamp = RTC::get_timestamp();
+		// dummy_entry.light = 134500;
+		// dummy_entry.solar_radiation = 1363;
+		// dummy_entry.wind_dir = 143;
+		// dummy_entry.wind_gust = 164;
+		// dummy_entry.wind_speed = 54;
+		// FoData::add(&dummy_entry);
+		/////////
+
+		TbFoDataJsonBuilder json_builder;
+		char json_buff[TELEMETRY_DATA_JSON_OUTPUT_BUFF_SIZE] = {0};
+
+		WiFiClient wifi_client;
+		IPFSClient client(wifi_client);
+		
+		client.set_node_address(IPFS_NODE_ADDR, IPFS_NODE_PORT);
+
+		DataStoreReader<FoData::StoreEntry> reader(FoData::get_store());
+		const FoData::StoreEntry *entry = NULL;
+
+		while(reader.next_file())
+		{
+			while((entry = reader.next_entry()))
+			{
+				if(!reader.entry_crc_valid())
+				{
+					continue;
+				}
+
+				json_builder.add(entry);
+
+				// Add geohash to JSON
+				JsonDocument *json_doc = json_builder.get_json_doc();
+				
+				json_doc->getElement(0)["values"]["geohash"] = DEVICE_GEOHASH;
+
+				// Get timestamp of record
+				uint32_t tstamp = (uint64_t)json_doc->getElement(0)["ts"] / 1000;
+				
+				json_builder.build(json_buff, sizeof(json_buff), true);
+
+				// Serial.println(F("Submitting --------------------"));
+				// Serial.println(json_buff);
+				// Serial.println(F("------------------------------------------------------------------------"));
+
+				IPFSClientFile ipfs_file = {0};
+				client.add_json(json_buff, "ws", &ipfs_file);
+
+				Serial.println(F("Hash: "));
+				Serial.println(ipfs_file.hash);
+
+				json_buff[0] = '\0';
+				Utils::build_ipfs_file_json(ipfs_file.hash, tstamp, json_buff, sizeof(json_buff));
+
+				Serial.println(F("TB JSON: "));
+				Serial.println(json_buff);
+
+				// Submit hash to TB
+				submit_tb_telemetry(json_buff, strlen(json_buff));
+				
+				json_buff[0] = '\0';
+				json_builder.reset();
+			}
+		}
+		//////////////////////
+
+		Utils::serial_style(STYLE_BLUE);
+		Utils::print_separator(F("IPFS submission complete"));
+		Utils::serial_style(STYLE_RESET);
 
 		return RET_OK;
 	}

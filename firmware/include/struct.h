@@ -230,6 +230,8 @@ struct FLAGS_T
     bool RTC_AUTO_SYNC: 1;
 
     bool EXTERNAL_RTC_ENABLED : 1;
+
+    bool IPFS: 1;
 };
 
 #endif

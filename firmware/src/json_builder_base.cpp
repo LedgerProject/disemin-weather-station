@@ -73,6 +73,15 @@ bool JsonBuilderBase<TStruct, TDocSize>::is_empty()
 	return _json_doc.size() < 1;
 }
 
+/******************************************************************************
+ * JsonDoc accessor
+ *****************************************************************************/
+template <typename TStruct, int TDocSize>
+StaticJsonDocument<TDocSize>* JsonBuilderBase<TStruct, TDocSize>::get_json_doc()
+{
+	return &_json_doc;
+}
+
 
 // Forward declarations
 template class JsonBuilderBase<Log::Entry, LOG_JSON_DOC_SIZE>;
